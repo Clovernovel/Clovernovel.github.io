@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简色小说-最全的小说</title>
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body>
+	<header id='header-section'>
+		<img src="static/logo1.png" alt="">
+		<div>
+			<a href="#header" id='index'>首页</a>
+			<a href="#option-section" id='func'>功能介绍</a>
+			<a href="#detail-section" id='about'>关于我们</a>
+		</div>
+	</header>
+	<div id='header'>
+		<div class='logo'></div>
+		<p class='title'>简色小说·有情怀小说·阅读器</p>
+		<a href="https://itunes.apple.com/cn/app/%E7%AE%80%E8%89%B2%E5%B0%8F%E8%AF%B4/id1354362018?mt=8" class='link' target="_blank">立即下载</a>
+		<a href="#option-section" id='func'><img src="static/down.png" alt="" class="animated infinite boom"></a>
+	</div>
+	<div id='option-section'>
+		<div class='text-section'>
+			<h1 class='text-title'>书架追更&nbsp;&&nbsp;支持换源</h1>
+			<p class='text-desc'>简色小说是一款最新最快最全的小说浏览器，订阅各大网站最火的连载小说，最及时的连载更新提示，最有情怀的阅读体验，只为给您最舒适的阅读感受。坚持将最好的用户体验带给你们，让每个阅读都充满情怀、优雅的阅读环境。</p>
+			<ul class='text-list'>
+				<li><img src="static/light.png" alt="">优雅的亮度调节、监控</li>
+				<li><img src="static/menu.png" alt="">章节目录，一目了然</li>
+				<li><img src="static/font.png" alt="">字体大小，随意可调</li>
+			</ul>
+		</div>
+		<div class='image-section'>
+			<img src="static/page1.png" alt="">
+			<img src="static/page2.png" alt="">
+		</div>
+	</div>
+	<div id='detail-section'>
+		<h1 class='text-title'>书架追更&nbsp;&&nbsp;支持换源</h1>
+		<p class='text-desc font20'>海量小说 · 只能搜索 · 先阅读 · 后书架 · 推荐最热搜索书籍 · 连载更新</p>
+		<div class='screenshot'>
+			<img src="static/page3.png" alt="">
+			<img src="static/page4.png" alt="">
+		</div>
+		<div class='download'>
+			<p>想要简色APP么？</p>
+			<a href="https://itunes.apple.com/cn/app/%E7%AE%80%E8%89%B2%E5%B0%8F%E8%AF%B4/id1354362018?mt=8" target="_blank">立即下载</a>
+		</div>
+		<div class='connect'>
+			<div class='connect-item'>
+				<img src="static/qq.png" alt="">
+				<p>QQ群：123456789</p>
+			</div>
+			<div class='connect-item'>
+				<img src="static/email.png" alt="">
+				<p>邮箱：Support@jiarishuo.com</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var headerDom = document.getElementById('header-section');
+	var aboutDom = document.getElementById('about');
+	var funcDom = document.getElementById('func');
+	var headerStyle = document.defaultView.getComputedStyle(headerDom);
+	window.onscroll = function() {
+		const scrollTop = window.pageYOffset;
+		if (scrollTop >= 572 && headerStyle.display === 'none') {
+			headerDom.style.display = 'flex';
+		}
+		if (scrollTop < 572 && headerStyle.display === 'flex') {
+			headerDom.style.display = 'none';
+		}
+		if (scrollTop < 572) {
+			funcDom.className = '';
+			aboutDom.className = '';
+		}
+		if (scrollTop >= 572 && scrollTop < 1063) {
+			funcDom.className = 'focus';
+			aboutDom.className = '';
+		}
+		if (scrollTop >= 1063) {
+			funcDom.className = '';
+			aboutDom.className = 'focus';
+		}
+	};
+</script>
+</html>
